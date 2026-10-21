@@ -1,61 +1,64 @@
 # checkinplan · 一年级学习打卡页
 
-一个纯静态页面（nginx 容器托管）：**周计划打卡 + 打卡日历 + 语文/数学练习生成器**。
-无后端、无数据库、不联网。打卡记录、RAZ 进度、错题本都存在浏览器 `localStorage` 里。
+单容器（**静态页面 + 数据同步 API**）：周计划打卡、打卡日历、语文/数学练习生成器，
+打卡记录、RAZ 进度、错题本会同步到容器里的 SQLite，**换浏览器 / 换设备访问同一个地址就是同一份数据**。
 
-仓库：https://github.com/blackanubis/checkinplan
+仓库：https://github.com/blackanubis/checkinplan　镜像：`ghcr.io/blackanubis/checkinplan:latest`
 
-## 目录结构
+## 结构
 
 ```
-.
-├── docker-compose.yml          # 端口与持久化目录都用变量，部署时可改
-├── nginx.conf                  # utf-8 + html 不缓存
-├── .env.example                # 复制成 .env 后按需修改
-├── make_icons.py               # 生成 favicon（页面已内联图标，此脚本仅供重新生成）
-└── html/
-    ├── index.html                  # 首页导航（两个入口）
-    ├── 学习周计划与每日打卡.html     # 打卡日历 + 每日打卡 + 12 周计划（内含练习生成器视图）
-    └── 语文数学练习生成器.html       # 出题 + 判分 + 错题本（独立页）
+Dockerfile                 单容器镜像（python:3.12-alpine，页面 + API 一起打包）
+server/app.py              Python 标准库写的静态服务 + /api/state（SQLite）
+html/index.html            首页导航
+html/学习周计划与每日打卡.html  打卡日历 + 每日打卡 + 12 周计划（内含练习生成器视图）
+html/语文数学练习生成器.html    出题 + 判分 + 错题本（独立页）
+docker-compose.yml         端口、数据目录都用变量
+docker-compose.feiniu.yml  飞牛 NAS 直接粘贴版（绝对路径）
+.github/workflows/ghcr.yml 推 main 自动构建多架构镜像推到 GHCR
 ```
 
-## 部署（Docker Compose）
-
-默认端口 **13003**，页面目录默认用仓库里的 `./html`，两者都能在部署时改：
+## 部署
 
 ```bash
 git clone https://github.com/blackanubis/checkinplan.git
 cd checkinplan
-cp .env.example .env     # 可选：改 WEB_PORT / APP_DIR
+cp .env.example .env      # 可选：改 WEB_PORT / DATA_DIR
 sudo docker compose up -d
-# 访问 http://<NAS的IP>:13003
+# 访问 http://<主机IP>:13003
 ```
 
-想让页面文件落到自己的目录（比如放到 docker 数据盘方便备份）：
+飞牛 NAS（端口 13003、数据放 `/vol3/1000/project/cheackinplan/data`）：
 
 ```bash
-APP_DIR=/vol1/1000/docker/checkinplan/html
-mkdir -p "$APP_DIR" && cp -r html/. "$APP_DIR/"
-echo "WEB_PORT=13003" > .env && echo "APP_DIR=$APP_DIR" >> .env
-sudo docker compose up -d
+sudo docker compose -f docker-compose.feiniu.yml up -d
 ```
 
-> `APP_DIR` 指向的目录必须先存在且有内容，容器只是挂载、不会帮你生成初始文件。
+## 数据怎么存的
 
-## 更新页面
+- 页面先写浏览器 `localStorage`（秒开、离线可用），约 0.6 秒后整体快照 POST 到 `/api/state`。
+- 服务端按 key 存进 `/data/state.db`（SQLite），带时间戳；打开页面时先拉服务端，服务端更新就覆盖本地并刷新一次。
+- **连不上 API 时静默降级为纯本地存储**（用 file:// 打开、资料库内嵌预览、或拿纯 nginx 托管页面都属于这种情况）。
+- 同步的 key：`check_YYYY-MM-DD`（每日打卡）、`cnma_wrongbook_v1`（错题本）、`raz_aa_count`、`weekdone`、`movies`。
+- 多设备要共享，必须访问**同一个地址**（协议+域名+端口一致）；端口不同也算两份数据。
+- 备份 = 复制 `state.db`（建议先停容器再复制，或直接复制也行）。
 
-- 换 HTML：把新文件覆盖到 `APP_DIR`（或仓库 `html/`）即可，**不用重启**——nginx 直接读文件，且已配 `no-store`。
-- 改了 `docker-compose.yml` / `nginx.conf` / `.env`：执行 `sudo docker compose up -d --force-recreate`。
-- 直接拉新版：`git pull && sudo docker compose up -d`（若用了自定义 `APP_DIR`，记得重新 `cp -r html/. "$APP_DIR/"`）。
+## 更新
 
-## 备份
+页面或后端改完推到 `main` → Actions 自动构建 `linux/amd64` + `linux/arm64` 镜像并推 GHCR（约 3-5 分钟）。
 
-要备份的只有一处：`APP_DIR` 指向的目录（页面文件）。
-打卡/错题数据不在服务端，在浏览器里；换设备或清缓存会丢，重要进度建议顺手截图留档。
+```bash
+sudo docker compose pull && sudo docker compose up -d
+```
 
-## 几点说明
+## 本地开发 / 不用 Docker
 
-- **中文文件名**：nginx 已配 `charset utf-8`，地址栏显示成 `%E5%AD%A6...` 是正常现象。
-- **打印**：用系统浏览器（Chrome / Edge）打开再打印，不要在资料库/内嵌预览里点打印——内嵌环境会拦截打印调用。
-- **图标**：favicon 已内联在 HTML 里（日历 / 对勾），页签和"添加到主屏幕"都有效；要换图标跑 `python make_icons.py` 重新生成并覆盖进 HTML。
-- **计划起点**：第 1 周从 2026-10-26（周一）起，之前几天页面顶部会显示"适应与调整期"橙色卡片。
+```bash
+CP_WWW=./html CP_DATA=./data CP_PORT=13003 python server/app.py
+```
+
+## 说明
+
+- 计划第 1 周从 **2026-10-26（周一）** 起，之前几天页面显示"适应与调整期"橙色卡片。
+- 打印请用系统浏览器（Chrome / Edge）打开，不要在资料库/内嵌预览里点打印。
+- favicon 已内联在 HTML 里；要换图标跑 `python make_icons.py` 重新生成。

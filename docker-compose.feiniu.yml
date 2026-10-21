@@ -1,0 +1,12 @@
+# 飞牛 NAS 直接粘贴版：端口 13003，数据持久化到 /vol3/1000/project/cheackinplan/data
+services:
+  checkinplan:
+    image: ghcr.io/blackanubis/checkinplan:latest
+    container_name: checkinplan
+    restart: unless-stopped
+    ports:
+      - "13003:80"
+    volumes:
+      - /vol3/1000/project/cheackinplan/data:/data
+    environment:
+      - TZ=Asia/Shanghai

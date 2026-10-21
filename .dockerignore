@@ -1,0 +1,7 @@
+.git
+.github
+.gitignore
+deploy
+*.pyc
+__pycache__
+.tmpdata
