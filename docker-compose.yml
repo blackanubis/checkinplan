@@ -1,0 +1,18 @@
+# 一年级学习打卡页（周计划日历 + 语文数学练习生成器）
+#
+# 部署时可自定义的两处（写在同目录的 .env 里即可，不写则用默认值）：
+#   WEB_PORT  对外端口              默认 13003
+#   APP_DIR   页面文件在宿主机的路径  默认 ./html（仓库自带）
+# 例：APP_DIR=/vol1/1000/docker/checkinplan/html
+services:
+  checkinplan:
+    image: nginx:alpine
+    container_name: checkinplan
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-13003}:80"
+    volumes:
+      - "${APP_DIR:-./html}:/usr/share/nginx/html:ro"
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    environment:
+      - TZ=Asia/Shanghai

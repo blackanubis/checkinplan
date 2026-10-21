@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>语文数学练习生成器 · 一年级（江苏教材进度）</title>
+<link rel="icon" type="image/png" sizes="180x180" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="shortcut icon" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#f4f7fb; --card:#fff; --ink:#1f2a37; --muted:#6b7a90;
+    --line:#e6ecf3; --brand:#3a8dde; --brand2:#34b3a0; --warn:#e8743b;
+    --good:#2e9e6b; --soft:#eef4fb; --radius:16px; --shadow:0 6px 20px rgba(31,42,55,.07);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-text-size-adjust:100%}
+  header{background:linear-gradient(135deg,#3a8dde,#34b3a0);color:#fff;padding:20px 18px 24px;box-shadow:var(--shadow)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 14px}
+  h1{font-size:20px;margin:0 0 4px;font-weight:800}
+  .sub{font-size:13px;opacity:.92;margin:0}
+  .navlink{display:flex;justify-content:flex-end;margin:0 0 10px}
+  .nl{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;
+    text-decoration:none;color:#1565c0;background:rgba(255,255,255,.94);
+    border:1px solid rgba(255,255,255,.9);border-radius:999px;padding:5px 13px;
+    box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  .nl:hover{background:#fff;color:#0d47a1}
+  @media print{ .navlink{display:none !important} }
+  main{padding:14px 0 40px}
+  section{margin:16px 0}
+  .sec-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;margin:0 0 10px}
+  .sec-title .dot{width:9px;height:9px;border-radius:50%;background:var(--brand)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .row:last-child{margin-bottom:0}
+  .lbl{font-size:12.5px;font-weight:700;color:var(--muted);min-width:52px}
+  .chip{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;
+    padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;transition:.15s}
+  .chip:hover{background:var(--soft)}
+  .chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .chip.rec{box-shadow:0 0 0 3px rgba(58,141,222,.18)}
+  select,input[type=number],input[type=text]{font-family:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);
+    border-radius:10px;background:#fff;color:var(--ink)}
+  .btn{border:none;background:var(--brand);color:#fff;font-weight:800;font-size:14px;
+    padding:10px 18px;border-radius:11px;cursor:pointer;transition:.15s}
+  .btn:hover{opacity:.9}
+  .btn.ghost{background:#fff;color:var(--muted);border:1px solid var(--line)}
+  .btn.ok{background:var(--good)}
+  .hint{font-size:12px;color:var(--muted);margin:6px 0 0}
+  .foot{text-align:center;color:var(--muted);font-size:12px}
+
+  /* Tab */
+  .tabs{display:flex;gap:8px;margin:16px 0 0}
+  .tab{flex:1;text-align:center;padding:12px 0;font-weight:800;font-size:15px;cursor:pointer;
+    background:#e8eef6;color:var(--muted);border:1px solid var(--line);border-bottom:none;
+    border-radius:14px 14px 0 0;transition:.15s}
+  .tab:hover{background:#dfe8f3}
+  .tab.on{background:var(--card);color:var(--brand)}
+  .panel{display:none}
+  .panel.on{display:block}
+
+  /* 数学题目 */
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .pb{display:flex;align-items:center;flex-wrap:wrap;min-width:0;gap:4px;background:var(--soft);border-radius:11px;padding:7px 8px}
+  .pb .no{font-size:10.5px;color:var(--muted);min-width:14px}
+  .pq{font-size:15px;font-weight:800;white-space:nowrap}
+  .pa{width:44px;min-width:0;text-align:center;font-weight:800;padding:3px 4px;font-size:15px}
+  .pa.right{background:#eafaf1;border-color:var(--good);color:var(--good)}
+  .pa.wrong{background:#fdeeea;border-color:#d9534f;color:#d9534f}
+  .pm{font-size:12.5px;font-weight:800;min-width:12px}
+  .pm.y{color:var(--good)}
+  .pm.n{color:#d9534f}
+  .ans{font-size:11.5px;color:var(--muted);margin-left:2px}
+
+  /* 语文题目 */
+  .qlist{display:flex;flex-direction:column;gap:10px}
+  .q{background:var(--soft);border-radius:12px;padding:10px 12px}
+  .q .qhead{display:flex;align-items:baseline;gap:8px}
+  .q .n{font-size:11.5px;color:var(--muted);min-width:20px}
+  .q .t{flex:1;font-size:15px;font-weight:700;line-height:1.6}
+  .q .mk{font-size:13.5px;font-weight:800;min-width:14px;text-align:right}
+  .q .mk.y{color:var(--good)}
+  .q .mk.n{color:#d9534f}
+  .py{font-size:17px;font-weight:800;color:var(--brand);letter-spacing:1px}
+  .q .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .q .an{font-size:12.5px;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}
+  .opt{border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px 13px;
+    font-size:16px;font-weight:800;cursor:pointer;transition:.12s;line-height:1.3}
+  .opt:hover{border-color:var(--brand)}
+  .opt.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .opt.right{background:#eafaf1;border-color:var(--good);color:var(--good)}
+  .opt.wrong{background:#fdeeea;border-color:#d9534f;color:#d9534f}
+  .qin{width:180px;font-size:15px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;margin-top:7px}
+  .qin.right{background:#eafaf1;border-color:var(--good);color:var(--good)}
+  .qin.wrong{background:#fdeeea;border-color:#d9534f;color:#d9534f}
+  .qin.wide{width:100%;max-width:460px}
+  .cardq{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand2)}
+  .cardq .prompt{font-size:16px;font-weight:800;margin:4px 0 6px;line-height:1.8}
+  .tag.wb{color:var(--warn);background:#fff6f1;border-color:#f6d5c2}
+  .wb-badge{font-size:10.5px;background:#fff2e9;color:var(--warn);border:1px solid #f6d5c2;
+    border-radius:8px;padding:1px 5px;font-weight:800}
+  /* 错题本 */
+  .wb-sec{margin-bottom:16px}
+  .wb-sec:last-child{margin-bottom:0}
+  .wb-t{font-size:13.5px;font-weight:800;margin:0 0 7px}
+  .wb-item{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--soft);
+    border-radius:10px;padding:7px 10px;margin-bottom:6px}
+  .wb-item .wb-q{flex:1;min-width:0;font-size:14.5px;font-weight:700;line-height:1.5}
+  .wb-meta{font-size:11.5px;color:var(--muted)}
+  .wb-del{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:8px;
+    cursor:pointer;padding:2px 9px;font-size:12px;font-weight:800}
+  .wb-del:hover{border-color:#d9534f;color:#d9534f}
+  .wb-add{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:8px;
+    cursor:pointer;padding:1px 5px;font-size:10.5px;font-weight:800;white-space:nowrap}
+  .wb-add:hover{border-color:var(--warn);color:var(--warn)}
+  .wb-add.on{background:#fff2e9;border-color:#f6d5c2;color:var(--warn)}
+  .tag{display:inline-block;font-size:11px;font-weight:800;color:var(--muted);background:#fff;
+    border:1px solid var(--line);border-radius:8px;padding:1px 7px;margin:0 4px 2px 0}
+
+  .res{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:14px;font-weight:700}
+  .res .big{font-size:22px;font-weight:800;color:var(--brand)}
+  .timer{font-variant-numeric:tabular-nums;font-size:15px;font-weight:800;color:var(--warn)}
+  @media(max-width:560px){ .grid{grid-template-columns:repeat(2,1fr)} .qin{width:120px} }
+  @media print{
+    header,.controls,.actions,.res,.sec-title,.foot,.tabs{display:none !important}
+    body{background:#fff}
+    .panel{display:none !important}
+    .panel.on{display:block !important}
+    .card{border:none;box-shadow:none;padding:0}
+    .pb{background:none;border-bottom:1px dashed #ccc;border-radius:0}
+    input.pa,.qin{color:transparent !important;border:none;border-bottom:1px solid #333;background:none}
+    .opt{background:none !important;color:#000 !important;border:1px solid #bbb}
+    .wb-del,.wb-add{display:none !important}
+    .pm,.ans,.mk,.an{display:none !important}
+    .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="navlink"><a class="nl" id="navToPlan">📅 学习计划与每日打卡 →</a></div>
+    <h1>语文 · 数学 练习生成器</h1>
+    <p class="sub">一年级 · 语文统编版 / 数学苏教版 · 按阶段随机出题 · 可判分、可打印</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="tabs">
+    <div class="tab on" data-tab="cn">📖 语文</div>
+    <div class="tab" data-tab="ma">🔢 数学</div>
+    <div class="tab" data-tab="wb">📕 错题本</div>
+  </div>
+
+  <!-- ============ 语文 ============ -->
+  <div class="panel on" id="panel-cn">
+
+    <section class="controls">
+      <div class="sec-title"><span class="dot" style="background:var(--brand2)"></span>语文出题设置</div>
+      <div class="card">
+        <div class="row">
+          <span class="lbl">阶段</span>
+          <button class="chip" data-cnph="1">阶段1 · 拼音</button>
+          <button class="chip" data-cnph="2">阶段2 · 识字</button>
+          <button class="chip" data-cnph="3">阶段3 · 词句</button>
+          <button class="chip" data-cnph="4">阶段4 · 写话</button>
+        </div>
+        <div class="row">
+          <span class="lbl">题型</span>
+          <select id="cnTypeSel"></select>
+        </div>
+        <div class="row">
+          <span class="lbl">题量</span>
+          <select id="cnCntSel">
+            <option value="5">5 题</option>
+            <option value="10" selected>10 题</option>
+            <option value="15">15 题</option>
+            <option value="20">20 题</option>
+          </select>
+          <label style="font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-left:6px">
+            <input type="checkbox" id="cnTimerOn"> 10 分钟计时
+          </label>
+          <label style="font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-left:6px">
+            <input type="checkbox" id="cnWbMix" checked> 混入错题（约 30%）
+          </label>
+        </div>
+        <div class="row">
+          <button class="btn" id="cnGenBtn">🎲 生成练习</button>
+          <p class="hint" id="cnRecHint"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="dot" style="background:var(--brand2)"></span>语文练习区<span class="timer" id="cnTimer" style="margin-left:auto"></span></div>
+      <div class="card">
+        <div class="qlist" id="cnList"></div>
+        <p class="hint" id="cnEmptyHint">点上方「生成练习」开始。默认按当前周次自动推荐阶段。</p>
+      </div>
+    </section>
+
+    <section class="actions">
+      <div class="card">
+        <div class="row">
+          <button class="btn ok" id="cnCheckBtn">✓ 提交批改</button>
+          <button class="btn ghost" id="cnAnsBtn">👁 显示答案</button>
+          <button class="btn ghost" id="cnAgainBtn">🔄 再来一组</button>
+          <button class="btn ghost" id="cnPrintBtn">🖨 打印</button>
+        </div>
+        <div class="res" id="cnRes"></div>
+        <p class="hint">说明：拼写题自动判分；照样子写词、补充句子、写话提示卡属主观题，由家长对照参考答案看。
+          每题右侧的「＋ 错题」可手动加入错题本（打印后在纸上作答时，对照批改直接点收录）。</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ 数学 ============ -->
+  <div class="panel" id="panel-ma">
+
+    <section class="controls">
+      <div class="sec-title"><span class="dot"></span>数学出题设置</div>
+      <div class="card">
+        <div class="row">
+          <span class="lbl">阶段</span>
+          <button class="chip" data-maph="1">阶段1 · 20以内</button>
+          <button class="chip" data-maph="2">阶段2 · 100以内</button>
+          <button class="chip" data-maph="3">阶段3 · 乘除1-5</button>
+          <button class="chip" data-maph="4">阶段4 · 乘除6-9</button>
+        </div>
+        <div class="row">
+          <span class="lbl">题型</span>
+          <select id="maTypeSel"></select>
+        </div>
+        <div class="row">
+          <span class="lbl">题量</span>
+          <select id="maCntSel">
+            <option value="10">10 题</option>
+            <option value="20" selected>20 题</option>
+            <option value="30">30 题</option>
+            <option value="50">50 题</option>
+          </select>
+          <label style="font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-left:6px">
+            <input type="checkbox" id="maTimerOn" checked> 5 分钟计时
+          </label>
+          <label style="font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;margin-left:6px">
+            <input type="checkbox" id="maWbMix" checked> 混入错题（约 30%）
+          </label>
+        </div>
+        <div class="row">
+          <button class="btn" id="maGenBtn">🎲 生成练习</button>
+          <p class="hint" id="maRecHint"></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-title"><span class="dot"></span>数学练习区<span class="timer" id="maTimer" style="margin-left:auto"></span></div>
+      <div class="card">
+        <div class="grid" id="maGrid"></div>
+        <p class="hint" id="maEmptyHint">点上方「生成练习」开始。默认按当前周次自动推荐阶段。</p>
+      </div>
+    </section>
+
+    <section class="actions">
+      <div class="card">
+        <div class="row">
+          <button class="btn ok" id="maCheckBtn">✓ 提交批改</button>
+          <button class="btn ghost" id="maAnsBtn">👁 显示答案</button>
+          <button class="btn ghost" id="maAgainBtn">🔄 再来一组</button>
+          <button class="btn ghost" id="maPrintBtn">🖨 打印</button>
+        </div>
+        <div class="res" id="maRes"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ 错题本 ============ -->
+  <div class="panel" id="panel-wb">
+    <section>
+      <div class="sec-title"><span class="dot" style="background:var(--warn)"></span>错题本
+        <span id="wbCount" style="margin-left:auto;font-size:12.5px;color:var(--muted);font-weight:700"></span></div>
+      <div class="card">
+        <p class="hint" style="margin:0 0 12px">
+          做错的题自动收录；下次练习勾选「混入错题」会按比例加进练习里。
+          <b>连续答对 3 次</b>自动移出。数据存在本机浏览器，换设备不保留。
+        </p>
+        <div id="wbList"></div>
+        <div class="row actions" style="margin-top:14px">
+          <button class="btn ghost" id="wbClearCn">清空语文错题</button>
+          <button class="btn ghost" id="wbClearMa">清空数学错题</button>
+          <button class="btn ghost" id="wbPrintBtn">🖨 打印错题</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p class="foot">
+    纯本地生成，不联网。打印时自动留空（不含答案），适合当纸质练习卡。
+  </p>
+</main>
+
+<script>
+/* ================= 通用工具 ================= */
+const $=(s)=>document.querySelector(s);
+const R=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=(a)=>a[Math.floor(Math.random()*a.length)];
+const pickN=(a,n)=>{const c=a.slice();const o=[];while(o.length<n&&c.length)o.push(c.splice(Math.floor(Math.random()*c.length),1)[0]);return o;};
+function shuffle(a){const c=a.slice();for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];}return c;}
+
+/* ================= 周次 / 阶段 ================= */
+const START=new Date(2026,9,26);
+function getWeek(){
+  const n=new Date();n.setHours(0,0,0,0);
+  const s=new Date(START);s.setHours(0,0,0,0);
+  const w=Math.floor(Math.round((n-s)/86400000)/7)+1;
+  return Math.min(Math.max(w,1),12);
+}
+function phaseOf(w){return w<=3?1:(w<=6?2:(w<=9?3:4));}
+
+/* ================= 错题本（localStorage 持久化） ================= */
+const WB_KEY="cnma_wrongbook_v1";
+const WB_CLEAR=3;               /* 连续答对多少次移出错题本 */
+let WB={cn:[],ma:[]};
+function wbLoad(){
+  try{
+    const o=JSON.parse(localStorage.getItem(WB_KEY))||{};
+    WB={cn:Array.isArray(o.cn)?o.cn:[],ma:Array.isArray(o.ma)?o.ma:[]};
+  }catch(e){WB={cn:[],ma:[]};}
+}
+function wbSave(){try{localStorage.setItem(WB_KEY,JSON.stringify(WB));}catch(e){}}
+const wbKey=(p)=>String(p.q)+"||"+String(p.a);
+const wbFind=(s,k)=>WB[s].find(x=>x.key===k);
+function wbAdd(s,p){
+  const k=wbKey(p);const e=wbFind(s,k);
+  if(e){e.wrong=(e.wrong||0)+1;e.streak=0;e.ts=Date.now();}
+  else WB[s].push({key:k,q:p.q,a:p.a,kind:p.kind||"num",opts:p.opts||null,
+    gradable:p.gradable!==false,sub:p.sub||"",prompt:p.prompt||"",ph:p.ph||0,
+    wrong:1,streak:0,ts:Date.now()});
+  wbSave();
+}
+/* 答对：连续计数 +1，达标移出；答错：入本并清零连续数。返回 "removed" 表示已移出 */
+function wbHit(s,p,right){
+  if(right){
+    const e=wbFind(s,wbKey(p));
+    if(!e)return "";
+    e.streak=(e.streak||0)+1;
+    if(e.streak>=WB_CLEAR){WB[s]=WB[s].filter(x=>x.key!==e.key);wbSave();return "removed";}
+    wbSave();return "";
+  }
+  wbAdd(s,p);return "added";
+}
+function wbToProblem(e){
+  if(e.kind==="num") return {q:e.q,a:e.a};
+  return {q:e.q,a:e.a,kind:e.kind,opts:e.opts||undefined,
+    gradable:e.gradable!==false,sub:e.sub,prompt:e.prompt};
+}
+/* 生成时按比例混入错题（优先当前阶段、其次最近错的） */
+function wbInject(s,out,ph){
+  const box=(s==="cn")?$("#cnWbMix"):$("#maWbMix");
+  if(!box||!box.checked||!out.length) return out;
+  const pool=WB[s].filter(e=>!out.some(p=>wbKey(p)===e.key));
+  if(!pool.length) return out;
+  const n=out.length;
+  const k=Math.min(pool.length,Math.max(1,Math.round(n*0.3)));
+  // 排序：连续答对次数多的优先（快毕业的必须先给机会）→ 当前阶段优先 → 同级内随机
+  const sorted=pool.slice().sort((x,y)=>
+    ((y.streak||0)-(x.streak||0))||((y.ph===ph)-(x.ph===ph))||(Math.random()-0.5));
+  sorted.slice(0,k).forEach(e=>{
+    const p=wbToProblem(e);p.wb=true;
+    let idx=R(0,n-1),guard=0;
+    while(guard<30&&out[idx]&&out[idx].wb){idx=R(0,n-1);guard++;}
+    out[idx]=p;
+  });
+  return out;
+}
+/* 每题的「加入错题本」按钮（纸质作答后手动收录） */
+function wbHas(s,p){return !!wbFind(s,wbKey(p));}
+function wbBtnHtml(s,p,i){
+  const has=wbHas(s,p);
+  return `<button type="button" class="wb-add${has?" on":""}" data-s="${s}" data-i="${i}" `+
+    `title="${has?"点击移出错题本":"加入错题本"}">${has?"📕 已收录":"＋ 错题"}</button>`;
+}
+function wbToggle(b){
+  const s=b.dataset.s,i=+b.dataset.i;
+  const arr=(s==="cn")?cnProblems:maProblems;
+  const p=arr[i];if(!p)return;
+  p.ph=(s==="cn")?cnPhase:maPhase;
+  const k=wbKey(p);
+  if(wbFind(s,k)){WB[s]=WB[s].filter(x=>x.key!==k);wbSave();}
+  else{wbAdd(s,p);}
+  const has=!!wbFind(s,k);
+  b.classList.toggle("on",has);
+  b.textContent=has?"📕 已收录":"＋ 错题";
+  b.title=has?"点击移出错题本":"加入错题本";
+  wbRender();
+}
+function wbRender(){
+  const groups=[["cn","📖 语文",WB.cn],["ma","🔢 数学",WB.ma]];
+  const c=$("#wbCount");
+  if(c) c.textContent=`共 ${WB.cn.length+WB.ma.length} 题`;
+  const box=$("#wbList");
+  if(!box)return;
+  box.innerHTML=groups.map(([k,title,arr])=>{
+    if(!arr.length) return `<div class="wb-sec"><p class="wb-t">${title} · 0 题</p><p class="hint">暂无错题 👍</p></div>`;
+    return `<div class="wb-sec"><p class="wb-t">${title} · ${arr.length} 题</p>`+
+      arr.map((e,i)=>{
+        const q=(k==="ma")
+          ?`<span class="pq">${e.q}</span> <span class="ans">= ${e.a}</span>`
+          :`<span>${e.q}</span> <span class="ans">→ ${e.a}</span>`;
+        return `<div class="wb-item"><div class="wb-q">${i+1}. ${q}</div>`+
+          `<span class="wb-meta">错 ${e.wrong||1} 次 · 连续答对 ${e.streak||0}/${WB_CLEAR}</span>`+
+          `<button class="wb-del" data-k="${k}" data-i="${i}">✕ 删除</button></div>`;
+      }).join("")+`</div>`;
+  }).join("");
+}
+
+/* =========================================================
+   语文部分
+   ========================================================= */
+
+/* --- 拼音工具 --- */
+const TM={a:"āáǎà",o:"ōóǒò",e:"ēéěè",i:"īíǐì",u:"ūúǔù","ü":"ǖǘǚǜ"};
+const REV={};const TONE={};
+for(const k in TM){for(let i=0;i<4;i++){REV[TM[k][i]]=k;TONE[TM[k][i]]=i+1;}}
+const SM=["zh","ch","sh","b","p","m","f","d","t","n","l","g","k","h","j","q","x","r","z","c","s","y","w"];
+const WHOLE=new Set(["zhi","chi","shi","ri","zi","ci","si","yi","wu","yu","ye","yue","yuan","yin","yun","ying"]);
+function plainOf(s){let p="",t=0;for(const ch of s){if(REV[ch]!==undefined){p+=REV[ch];t=TONE[ch];}else p+=ch;}return{p,t};}
+function markTone(syl,t){
+  if(!t) return syl;
+  let idx=-1;
+  if(syl.indexOf("a")>=0) idx=syl.indexOf("a");
+  else if(syl.indexOf("o")>=0) idx=syl.indexOf("o");
+  else if(syl.indexOf("e")>=0) idx=syl.indexOf("e");
+  else{ for(let i=syl.length-1;i>=0;i--){ if("iuü".indexOf(syl[i])>=0){idx=i;break;} } }
+  if(idx<0) return syl;
+  const ch=syl[idx];
+  return syl.slice(0,idx)+TM[ch][t-1]+syl.slice(idx+1);
+}
+/* 把一个带调音节拆成 声母 + 韵母 + 声调（拆不了返回 null） */
+function splitSyl(s){
+  const {p,t}=plainOf(s);
+  if(!t||WHOLE.has(p)) return null;
+  let sm="";
+  for(const c of ["zh","ch","sh"]){ if(p.indexOf(c)===0&&p.length>c.length){sm=c;break;} }
+  if(!sm){ if(SM.indexOf(p[0])>=0&&p.length>1) sm=p[0]; }
+  if(!sm) return null;
+  const ym=p.slice(sm.length);
+  if(!ym) return null;
+  return {sm,ym,t,text:markTone(sm+ym,t)};
+}
+
+/* --- 词库 --- */
+const W_BASIC=[
+["爸妈","bà mā"],["我们","wǒ men"],["大米","dà mǐ"],["土地","tǔ dì"],["马车","mǎ chē"],
+["山水","shān shuǐ"],["上下","shàng xià"],["左右","zuǒ yòu"],["耳目","ěr mù"],["手足","shǒu zú"],
+["白天","bái tiān"],["日出","rì chū"],["火花","huǒ huā"],["牛羊","niú yáng"],["小鸟","xiǎo niǎo"],
+["风雨","fēng yǔ"],["白云","bái yún"],["木头","mù tou"],["禾苗","hé miáo"],["竹子","zhú zi"],
+["东西","dōng xi"],["多少","duō shǎo"],["大小","dà xiǎo"],["长短","cháng duǎn"],["开关","kāi guān"],
+["出入","chū rù"],["回来","huí lái"],["门口","mén kǒu"],["日月","rì yuè"],["水田","shuǐ tián"],
+["果子","guǒ zi"],["小刀","xiǎo dāo"],["尺子","chǐ zi"],["书本","shū běn"],["毛巾","máo jīn"],
+["下雨","xià yǔ"],["冬天","dōng tiān"],["春天","chūn tiān"],["夏天","xià tiān"],["秋天","qiū tiān"],
+["早晨","zǎo chen"],["晚上","wǎn shang"],["同学","tóng xué"],["老师","lǎo shī"],["学校","xué xiào"],
+["朋友","péng you"],["家人","jiā rén"],["开心","kāi xīn"],["快乐","kuài lè"],["高兴","gāo xìng"],
+["美丽","měi lì"],["认真","rèn zhēn"],["学习","xué xí"],["读书","dú shū"],["写字","xiě zì"],
+["说话","shuō huà"],["看见","kàn jiàn"],["走路","zǒu lù"],["跑步","pǎo bù"],["吃饭","chī fàn"],
+["喝水","hē shuǐ"],["睡觉","shuì jiào"],["起床","qǐ chuáng"],["洗手","xǐ shǒu"],["刷牙","shuā yá"],
+["衣服","yī fu"],["鞋子","xié zi"],["帽子","mào zi"],["书包","shū bāo"],["铅笔","qiān bǐ"]
+];
+const W_ADV=[
+["橡皮","xiàng pí"],["桌子","zhuō zi"],["椅子","yǐ zi"],["窗户","chuāng hu"],["汽车","qì chē"],
+["火车","huǒ chē"],["飞机","fēi jī"],["轮船","lún chuán"],["马路","mǎ lù"],["公园","gōng yuán"],
+["医院","yī yuàn"],["商店","shāng diàn"],["花园","huā yuán"],["草地","cǎo dì"],["树林","shù lín"],
+["小河","xiǎo hé"],["大海","dà hǎi"],["天空","tiān kōng"],["太阳","tài yáng"],["月亮","yuè liang"],
+["星星","xīng xing"],["彩虹","cǎi hóng"],["雪花","xuě huā"],["教室","jiào shì"],["身体","shēn tǐ"],
+["眼睛","yǎn jing"],["鼻子","bí zi"],["嘴巴","zuǐ ba"],["耳朵","ěr duo"],["头发","tóu fa"],
+["爷爷","yé ye"],["奶奶","nǎi nai"],["哥哥","gē ge"],["姐姐","jiě jie"],["弟弟","dì di"],
+["妹妹","mèi mei"],["医生","yī shēng"],["工人","gōng rén"],["农民","nóng mín"],["司机","sī jī"],
+["天气","tiān qì"],["节日","jié rì"],["新年","xīn nián"],["礼物","lǐ wù"],["蛋糕","dàn gāo"],
+["气球","qì qiú"],["玩具","wán jù"],["积木","jī mù"],["秋千","qiū qiān"],["风筝","fēng zheng"],
+["皮球","pí qiú"],["游泳","yóu yǒng"],["跳绳","tiào shéng"],["唱歌","chàng gē"],["跳舞","tiào wǔ"],
+["画画","huà huà"],["故事","gù shi"],["电视","diàn shì"],["电脑","diàn nǎo"],["手机","shǒu jī"],
+["照片","zhào piàn"],["音乐","yīn yuè"],["声音","shēng yīn"],["颜色","yán sè"],["红色","hóng sè"],
+["黄色","huáng sè"],["蓝色","lán sè"],["绿色","lǜ sè"],["白色","bái sè"],["黑色","hēi sè"],
+["时间","shí jiān"],["钟表","zhōng biǎo"],["今天","jīn tiān"],["昨天","zuó tiān"],["明天","míng tiān"],
+["中午","zhōng wǔ"],["下午","xià wǔ"],["星期","xīng qī"],["小猫","xiǎo māo"],["小狗","xiǎo gǒu"],
+["小鸡","xiǎo jī"],["鸭子","yā zi"],["兔子","tù zi"],["老虎","lǎo hǔ"],["大象","dà xiàng"],
+["猴子","hóu zi"],["熊猫","xióng māo"],["蝴蝶","hú dié"],["蜜蜂","mì fēng"],["蚂蚁","mǎ yǐ"],
+["青蛙","qīng wā"],["乌龟","wū guī"],["苹果","píng guǒ"],["香蕉","xiāng jiāo"],["葡萄","pú tao"],
+["西瓜","xī guā"],["草莓","cǎo méi"],["桃子","táo zi"],["萝卜","luó bo"],["土豆","tǔ dòu"],
+["面条","miàn tiáo"],["米饭","mǐ fàn"],["饺子","jiǎo zi"],["面包","miàn bāo"],["牛奶","niú nǎi"],
+["鸡蛋","jī dàn"],["糖果","táng guǒ"]
+];
+const W_ALL=W_BASIC.concat(W_ADV);
+
+/* --- 拼读题（从真实音节里拆声母+韵母，避免出现不存在的音节） --- */
+const SYLS=[];
+(function(){
+  const seen=new Set();
+  W_ALL.forEach(([w,p])=>{
+    p.split(/\s+/).forEach(s=>{
+      const o=splitSyl(s);
+      if(o&&!seen.has(o.sm+"|"+o.ym)){seen.add(o.sm+"|"+o.ym);SYLS.push(o);}
+    });
+  });
+})();
+const TONE_CN=["","一声","二声","三声","四声"];
+
+/* --- 语文题型生成器 --- */
+function gPinyin(){
+  const o=pick(SYLS);
+  const opts=new Set([o.text]);
+  // 干扰1：换声调
+  for(let t=1;t<=4&&opts.size<4;t++){ if(t!==o.t) opts.add(markTone(o.sm+o.ym,t)); }
+  // 干扰2：换声母
+  let guard=0;
+  while(opts.size<4&&guard<80){ guard++; const s=pick(SM); if(s!==o.sm) opts.add(markTone(s+o.ym,o.t)); }
+  const right=o.text;
+  return {
+    q:`<span class="py">${o.sm} — ${o.ym}</span> <span class="tag">${TONE_CN[o.t]}</span> 拼一拼，选出正确的音节`,
+    a:right, kind:"choice", opts:shuffle([...opts]), gradable:true
+  };
+}
+function gWord(list){
+  const [w,p]=pick(list);
+  return {q:`<span class="py">${p}</span> 看拼音，写词语`, a:w, kind:"write", gradable:true};
+}
+function gChoosePy(){
+  const [w,p]=pick(W_ALL);
+  const opts=new Set([p]);
+  let guard=0;
+  while(opts.size<4&&guard<200){ guard++; const q=pick(W_ALL)[1]; if(q!==p) opts.add(q); }
+  return {q:`「${w}」的拼音是哪一个？`, a:p, kind:"choice", opts:shuffle([...opts]), gradable:true};
+}
+const LIANG=[
+["牛","头"],["马","匹"],["鱼","条"],["鸟","只"],["花","朵"],["云","朵"],["树","棵"],["书","本"],
+["笔","支"],["车","辆"],["桥","座"],["山","座"],["鞋","双"],["袜子","双"],["衣服","件"],["桌子","张"],
+["椅子","把"],["伞","把"],["水","杯"],["饭","碗"],["星星","颗"],["糖","颗"],["猪","头"],["羊","只"],
+["狗","只"],["猫","只"],["兔子","只"],["老虎","只"],["大象","头"],["猴子","只"],["蛇","条"],["船","艘"],
+["飞机","架"],["火车","列"],["灯","盏"],["画","幅"],["歌","首"],["门","扇"],["井","口"],["绳子","根"]
+];
+const LIANG_POOL=["头","只","条","匹","朵","棵","本","支","辆","座","把","双","件","张","颗","杯","碗","架","扇","根"];
+function gLiang(){
+  const [n,a]=pick(LIANG);
+  const opts=new Set([a]);
+  let guard=0;
+  while(opts.size<4&&guard<80){ guard++; opts.add(pick(LIANG_POOL)); }
+  return {q:`一（　）${n}`, a, kind:"choice", opts:shuffle([...opts]), gradable:true};
+}
+const ANTI=[
+["大","小"],["上","下"],["左","右"],["前","后"],["多","少"],["长","短"],["高","矮"],["黑","白"],
+["早","晚"],["里","外"],["远","近"],["来","去"],["进","出"],["开","关"],["冷","热"],["新","旧"],
+["快","慢"],["哭","笑"],["东","西"],["南","北"],["白天","黑夜"],["认真","马虎"]
+];
+function gAnti(){
+  const [w,a]=pick(ANTI);
+  const opts=new Set([a]);
+  const pool=ANTI.map(x=>x[1]).concat(ANTI.map(x=>x[0]));
+  let guard=0;
+  while(opts.size<4&&guard<80){ guard++; const c=pick(pool); if(c!==a&&c!==w) opts.add(c); }
+  return {q:`「${w}」的反义词是？`, a, kind:"choice", opts:shuffle([...opts]), gradable:true};
+}
+const GROUPS=[
+{g:"水果",w:["苹果","香蕉","西瓜","葡萄","草莓","桃子"]},
+{g:"动物",w:["小猫","小狗","小鸡","兔子","老虎","大象","猴子","熊猫"]},
+{g:"文具",w:["铅笔","橡皮","尺子","书本","书包"]},
+{g:"交通工具",w:["汽车","火车","飞机","轮船"]},
+{g:"身体",w:["眼睛","鼻子","嘴巴","耳朵","手足","头发"]},
+{g:"颜色",w:["红色","黄色","蓝色","绿色","白色","黑色"]},
+{g:"家人",w:["爷爷","奶奶","哥哥","姐姐","弟弟","妹妹","爸妈"]},
+{g:"天气季节",w:["春天","夏天","秋天","冬天","雪花","彩虹","下雨"]},
+{g:"食物",w:["米饭","面条","饺子","面包","牛奶","鸡蛋","糖果"]},
+{g:"地方",w:["学校","公园","医院","商店","花园","教室"]}
+];
+function gGroup(){
+  const A=pick(GROUPS), B=pick(GROUPS);
+  if(A===B) return gGroup();
+  const three=pickN(A.w,3);
+  const odd=pick(B.w);
+  if(three.indexOf(odd)>=0) return gGroup();
+  const opts=shuffle(three.concat([odd]));
+  return {q:`下面哪一个是不同类的？`, a:odd, kind:"choice", opts, gradable:true};
+}
+const PATTERN=[
+{p:"绿油油（ABB）",a:"红彤彤、白花花、亮晶晶、胖乎乎"},
+{p:"高高兴兴（AABB）",a:"快快乐乐、干干净净、明明白白、多多少少"},
+{p:"又大又圆（又A又B）",a:"又香又甜、又高又大、又白又胖"},
+{p:"看了看（A了A）",a:"想一想、说一说、走一走"},
+{p:"一个个（一AA）",a:"一只只、一朵朵、一片片"}
+];
+function gZhao(){
+  const o=pick(PATTERN);
+  return {q:`照样子写一写：<span class="py">${o.p}</span>`, a:o.a, kind:"write", gradable:false,
+    sub:"至少写两个，不会写的可先用拼音"};
+}
+const SENT=[
+["我看见____。","小鸟在天上飞"],
+["天上有____。","一朵白云"],
+["小朋友们在____。","操场上踢足球"],
+["妈妈给我____。","买了一个新书包"],
+["今天天气____。","真好，阳光很暖"],
+["____真好吃！","妈妈做的饺子"],
+["我喜欢____，也喜欢____。","看书，画画"],
+["小明一边____，一边____。","走路，唱歌"],
+["因为____，所以我很开心。","今天是我的生日"],
+["____在____里____。","小鱼，小河，游来游去"]
+];
+function gSent(){
+  const [q,a]=pick(SENT);
+  return {q:`把句子补充完整：${q}`, a, kind:"write", gradable:false, sub:"参考答案仅供参考，写得通顺即可"};
+}
+const C_TIME=["早上","上午","中午","下午","放学后","星期天","夏天的傍晚","过年的时候","今天下课后","周末的上午"];
+const C_WHO=["我和妈妈","我和爸爸","我和同学小明","爷爷和我","我和妹妹","老师和我","我和好朋友"];
+const C_LOC=["在公园里","在超市里","在家里","在学校操场上","在奶奶家","在海边","在动物园","在小区里"];
+const C_DO=["放风筝","喂小兔子","买水果","踢足球","包饺子","看图画书","堆雪人","给花浇水","打扫房间","做手工"];
+const C_MOOD=["很开心","特别高兴","有点紧张","很自豪","觉得很有意思","心里暖暖的"];
+function gCard(){
+  const t=pick(C_TIME),w=pick(C_WHO),l=pick(C_LOC),d=pick(C_DO),m=pick(C_MOOD);
+  return {q:"写话提示卡", a:`${t}，${w}${l}${d}，我们${m}。`, kind:"card", gradable:false,
+    prompt:`${t}，${w} ${l} ${d}，我们 ${m}。`,
+    sub:"写清 时间 · 地点 · 人物 · 干什么 · 心情；可写 3 句以上，试试「先…接着…最后…」"};
+}
+
+const CN_TYPES={
+  1:[
+    {k:"拼音拼读（选音节）",f:gPinyin},
+    {k:"看拼音写词语",f:()=>gWord(W_BASIC)},
+    {k:"给词语选拼音",f:gChoosePy},
+    {k:"混合（推荐）",f:()=>pick([gPinyin,()=>gWord(W_BASIC),gChoosePy])()},
+  ],
+  2:[
+    {k:"看拼音写词语（进阶）",f:()=>gWord(W_ADV)},
+    {k:"量词填空",f:gLiang},
+    {k:"反义词",f:gAnti},
+    {k:"拼音拼读（复习）",f:gPinyin},
+    {k:"混合（推荐）",f:()=>pick([()=>gWord(W_ADV),gLiang,gAnti,gPinyin])()},
+  ],
+  3:[
+    {k:"照样子写词语",f:gZhao},
+    {k:"词语归类（找不同）",f:gGroup},
+    {k:"补充句子",f:gSent},
+    {k:"量词复习",f:gLiang},
+    {k:"混合（推荐）",f:()=>pick([gZhao,gGroup,gSent,gLiang])()},
+  ],
+  4:[
+    {k:"写话提示卡",f:gCard},
+    {k:"补充句子（进阶）",f:gSent},
+    {k:"词语归类",f:gGroup},
+    {k:"看拼音写词语（复习）",f:()=>gWord(W_ALL)},
+    {k:"混合（推荐）",f:()=>pick([gCard,gSent,gGroup,()=>gWord(W_ALL)])()},
+  ],
+};
+
+/* --- 语文状态与渲染 --- */
+let cnPhase=phaseOf(getWeek());
+let cnProblems=[];let cnShowAns=false;let cnTimerId=null,cnLeft=0;
+let cnPicked=[];   /* 每题已选/已填的答案 */
+let cnMarks=[];    /* 每题批改结果："" | "y" | "n" */
+
+function cnBuildTypes(){
+  const sel=$("#cnTypeSel");
+  sel.innerHTML=CN_TYPES[cnPhase].map((t,i)=>`<option value="${i}">${t.k}</option>`).join("");
+  sel.selectedIndex=CN_TYPES[cnPhase].length-1;
+}
+function cnSyncChips(){
+  document.querySelectorAll(".chip[data-cnph]").forEach(c=>{
+    const p=+c.dataset.cnph;
+    c.classList.toggle("on",p===cnPhase);
+    c.classList.toggle("rec",p===phaseOf(getWeek()));
+  });
+  const w=getWeek();
+  $("#cnRecHint").textContent=`当前第 ${w} 周 → 推荐阶段 ${phaseOf(w)}（加框为推荐）。阶段可手动切换。`;
+}
+function cnGenerate(){
+  const idx=+$("#cnTypeSel").value||0;
+  const fn=CN_TYPES[cnPhase][idx].f;
+  const n=+$("#cnCntSel").value;
+  const seen=new Set();let out=[];let guard=0;
+  while(out.length<n&&guard<3000){
+    guard++;const p=fn();
+    const key=p.q+"|"+p.a;
+    if(seen.has(key))continue;
+    seen.add(key);out.push(p);
+  }
+  while(out.length<n) out.push(fn());
+  out=wbInject("cn",out,cnPhase);
+  cnProblems=out;cnShowAns=false;
+  cnPicked=new Array(out.length).fill("");
+  cnMarks=new Array(out.length).fill("");
+  cnRender();
+  $("#cnEmptyHint").style.display="none";
+  $("#cnRes").innerHTML="";
+  cnStartTimer();
+}
+function cnRender(){
+  $("#cnList").innerHTML=cnProblems.map((p,i)=>{
+    const sub=p.sub?`<div class="sub">${p.sub}</div>`:"";
+    const ans=cnShowAns?`<div class="an">参考答案：${p.a}</div>`:"";
+    const head=`<div class="qhead"><span class="n">${i+1}.</span>`+
+      `<span class="t">${p.q}${p.wb?' <span class="tag wb">📕 错题</span>':''}</span>`+
+      `<span class="mk" data-m="${i}"></span>${wbBtnHtml("cn",p,i)}</div>`;
+    if(p.kind==="choice"){
+      const opts=`<div class="opts">`+p.opts.map(o=>
+        `<button type="button" class="opt" data-i="${i}" data-v="${o}">${o}</button>`).join("")+`</div>`;
+      return `<div class="q">${head}${opts}${ans}</div>`;
+    }
+    if(p.kind==="card"){
+      return `<div class="q cardq">${head}<div class="prompt">${p.prompt}</div>${sub}`+
+        `<input class="qin wide" type="text" data-i="${i}" placeholder="写一句完整的话（可以先说再写）">${ans}</div>`;
+    }
+    return `<div class="q">${head}${sub}`+
+      `<div><input class="qin" type="text" data-i="${i}" placeholder="写一写"></div>${ans}</div>`;
+  }).join("");
+  cnApplyState();
+}
+/* 把已选/已填与批改结果还原到 DOM（重绘后状态不丢） */
+function cnApplyState(){
+  cnProblems.forEach((p,i)=>{
+    const v=cnPicked[i]||"";
+    const st=cnMarks[i];
+    if(p.kind==="choice"){
+      document.querySelectorAll(`.opt[data-i="${i}"]`).forEach(b=>{
+        b.classList.remove("on","right","wrong");
+        const isPick=(b.dataset.v===v);
+        if(st==="y"&&b.dataset.v===p.a) b.classList.add("right");
+        else if(st==="n"&&isPick&&v!==p.a) b.classList.add("wrong");
+        else if(st==="n"&&b.dataset.v===p.a) b.classList.add("right");
+        else if(isPick&&!st) b.classList.add("on");
+      });
+    }else{
+      const el=$(`.qin[data-i="${i}"]`);
+      if(el){el.value=v;el.classList.remove("right","wrong");
+        if(st&&p.gradable) el.classList.add(st==="y"?"right":"wrong");}
+    }
+    const mk=$(`.mk[data-m="${i}"]`);
+    if(mk){mk.textContent=st==="y"?"✓":(st==="n"?"✗ 正确答案 "+p.a:"");mk.className="mk"+(st?" "+st:"");}
+  });
+}
+function cnStartTimer(){
+  cnStopTimer();
+  if(!$("#cnTimerOn").checked){$("#cnTimer").textContent="";return;}
+  cnLeft=600;
+  const tick=()=>{
+    const m=String(Math.floor(cnLeft/60)).padStart(2,"0");
+    const s=String(cnLeft%60).padStart(2,"0");
+    $("#cnTimer").textContent=`⏱ ${m}:${s}`;
+    if(cnLeft<=0){cnStopTimer();$("#cnTimer").textContent="⏱ 时间到";return;}
+    cnLeft--;
+  };
+  tick();cnTimerId=setInterval(tick,1000);
+}
+function cnStopTimer(){if(cnTimerId){clearInterval(cnTimerId);cnTimerId=null;}}
+function cnCheck(){
+  if(!cnProblems.length)return;
+  let ok=0,total=0,done=0,subj=0,wbAdd=0,wbDel=0;
+  cnProblems.forEach((p,i)=>{
+    cnMarks[i]="";
+    if(!p.gradable){subj++;return;}
+    total++;
+    const v=(cnPicked[i]||"").trim();
+    if(!v)return;
+    done++;
+    const right=(v===p.a);
+    cnMarks[i]=right?"y":"n";
+    if(right)ok++;
+    p.ph=cnPhase;
+    const r=wbHit("cn",p,right);
+    if(r==="added")wbAdd++; else if(r==="removed")wbDel++;
+  });
+  cnRender();wbRender();
+  $("#cnRes").innerHTML=`<span class="big">${ok} / ${total}</span>`+
+    `<span>已做 ${done} 题 · 正确率 ${done?Math.round(ok/done*100):0}%</span>`+
+    (done===total&&ok===total&&total?`<span style="color:var(--good)">全对 🎉</span>`:"")+
+    (subj?`<span style="color:var(--muted);font-weight:600">另有 ${subj} 题主观题，点「显示答案」看参考</span>`:"")+
+    `<span style="color:var(--muted);font-weight:600">📕 错题本 ${wbAdd?"+"+wbAdd+" ":""}${wbDel?"移出 "+wbDel+" ":""}${!wbAdd&&!wbDel?"无变化":""}</span>`;
+}
+
+/* 选项点选 / 填空输入（事件委托） */
+const d_opts=(i)=>Array.prototype.slice.call(document.querySelectorAll(`.opt[data-i="${i}"]`));
+$("#cnList").addEventListener("click",e=>{
+  const wb=e.target.closest(".wb-add");
+  if(wb){wbToggle(wb);return;}
+  const b=e.target.closest(".opt");
+  if(!b)return;
+  const i=+b.dataset.i;
+  cnPicked[i]=b.dataset.v;
+  cnMarks[i]="";
+  // 局部更新，不整块重绘（避免滚动/焦点跳动）
+  d_opts(i).forEach(o=>{o.classList.remove("on","right","wrong");});
+  b.classList.add("on");
+  const mk=$(`.mk[data-m="${i}"]`);
+  if(mk){mk.textContent="";mk.className="mk";}
+});
+$("#cnList").addEventListener("input",e=>{
+  const el=e.target.closest(".qin");
+  if(!el)return;
+  const i=+el.dataset.i;
+  cnPicked[i]=el.value;
+  cnMarks[i]="";
+  const mk=$(`.mk[data-m="${i}"]`);
+  if(mk){mk.textContent="";mk.className="mk";}
+  el.classList.remove("right","wrong");
+});
+
+/* =========================================================
+   数学部分
+   ========================================================= */
+function g10(){
+  if(Math.random()<0.5){const a=R(1,9),b=R(1,10-a);return{q:`${a} + ${b} =`,a:a+b};}
+  const a=R(2,10),b=R(1,a);return{q:`${a} − ${b} =`,a:a-b};
+}
+function gAdd20n(){
+  if(Math.random()<0.5){const a=R(1,9),b=R(1,10-a);return{q:`${a} + ${b} =`,a:a+b};}
+  const a=R(11,18),o=a%10,b=R(1,9-o);return{q:`${a} + ${b} =`,a:a+b};
+}
+function gAdd20c(){let a,b;do{a=R(2,9);b=R(2,9);}while(a+b<=10);return{q:`${a} + ${b} =`,a:a+b};}
+function gSub20n(){
+  if(Math.random()<0.5){const a=R(2,10),b=R(1,a);return{q:`${a} − ${b} =`,a:a-b};}
+  const a=R(11,19),o=a%10,b=R(1,o);return{q:`${a} − ${b} =`,a:a-b};
+}
+function gSub20c(){let a,o;do{a=R(11,20);o=a%10;}while(o===9);const b=R(o+1,9);return{q:`${a} − ${b} =`,a:a-b};}
+function gAdd100n(){
+  for(let i=0;i<300;i++){
+    const a=R(11,88),aT=(a/10|0),aO=a%10;
+    const bT=R(1,Math.max(1,9-aT)),bO=R(1,Math.max(1,9-aO));
+    if(aT+bT<=9&&aO+bO<=9){const b=bT*10+bO;return{q:`${a} + ${b} =`,a:a+b};}
+  }
+  return{q:"23 + 15 =",a:38};
+}
+function gAdd100c(){
+  for(let i=0;i<300;i++){
+    const a=R(11,89),aT=(a/10|0),aO=a%10;
+    if(aT===9||aO===0) continue;
+    const bO=R(10-aO,9),bT=R(1,9-aT),b=bT*10+bO;
+    if(a+b<=99&&aO+bO>=10) return{q:`${a} + ${b} =`,a:a+b};
+  }
+  return{q:"25 + 37 =",a:62};
+}
+function gSub100n(){
+  for(let i=0;i<300;i++){
+    const a=R(21,99),aT=(a/10|0),aO=a%10;
+    const bT=R(1,aT),bO=R(1,Math.max(1,aO)),b=bT*10+bO;
+    if(aO>=bO&&aT>=bT&&a-b>=0) return{q:`${a} − ${b} =`,a:a-b};
+  }
+  return{q:"47 − 12 =",a:35};
+}
+function gSub100c(){
+  for(let i=0;i<300;i++){
+    const a=R(21,99),aT=(a/10|0),aO=a%10;
+    if(aT<2||aO===9) continue;
+    const bO=R(aO+1,9),bT=R(1,aT-1),b=bT*10+bO;
+    if(a-b>0) return{q:`${a} − ${b} =`,a:a-b};
+  }
+  return{q:"42 − 18 =",a:24};
+}
+function gMul15(){const a=R(1,5),b=R(1,5);return{q:`${a} × ${b} =`,a:a*b};}
+function gDiv15(){const b=R(1,5),q=R(1,5);return{q:`${b*q} ÷ ${b} =`,a:q};}
+function gMul69(){
+  for(let i=0;i<200;i++){const a=R(2,9),b=R(2,9);if(Math.max(a,b)>=6)return{q:`${a} × ${b} =`,a:a*b};}
+  return{q:"7 × 8 =",a:56};
+}
+function gDivAll(){const b=R(2,9),q=R(2,9);return{q:`${b*q} ÷ ${b} =`,a:q};}
+function gMulDiv(){
+  if(Math.random()<0.5){const a=R(2,9),b=R(2,9);return{q:`${a} × ${b} =`,a:a*b};}
+  const b=R(2,9),q=R(2,9);return{q:`${b*q} ÷ ${b} =`,a:q};
+}
+const MA_TYPES={
+  1:[
+    {k:"10 以内加减",f:g10},
+    {k:"20 以内不进位加",f:gAdd20n},
+    {k:"20 以内进位加（凑十法）",f:gAdd20c},
+    {k:"20 以内不退位减",f:gSub20n},
+    {k:"20 以内退位减（破十法）",f:gSub20c},
+    {k:"混合（推荐）",f:()=>pick([g10,gAdd20n,gAdd20c,gSub20n,gSub20c])()},
+  ],
+  2:[
+    {k:"100 以内不进位加",f:gAdd100n},
+    {k:"100 以内进位加",f:gAdd100c},
+    {k:"100 以内不退位减",f:gSub100n},
+    {k:"100 以内退位减",f:gSub100c},
+    {k:"20 以内复习",f:()=>pick([gAdd20c,gSub20c])()},
+    {k:"混合（推荐）",f:()=>pick([gAdd100n,gAdd100c,gSub100n,gSub100c])()},
+  ],
+  3:[
+    {k:"乘法 1-5",f:gMul15},
+    {k:"除法（平均分 1-5）",f:gDiv15},
+    {k:"20 以内加减复习",f:()=>pick([gAdd20c,gSub20c])()},
+    {k:"混合（推荐）",f:()=>pick([gMul15,gMul15,gDiv15,gAdd20c,gSub20c])()},
+  ],
+  4:[
+    {k:"乘法 6-9",f:gMul69},
+    {k:"表内除法",f:gDivAll},
+    {k:"乘除混合",f:gMulDiv},
+    {k:"100 以内加减复习",f:()=>pick([gAdd100c,gSub100c])()},
+    {k:"综合（推荐）",f:()=>pick([gMul69,gDivAll,gMulDiv,gAdd100c,gSub100c])()},
+  ],
+};
+let maPhase=phaseOf(getWeek());
+let maProblems=[];let maShowAns=false;let maTimerId=null,maLeft=0;
+function maBuildTypes(){
+  const sel=$("#maTypeSel");
+  sel.innerHTML=MA_TYPES[maPhase].map((t,i)=>`<option value="${i}">${t.k}</option>`).join("");
+  sel.selectedIndex=MA_TYPES[maPhase].length-1;
+}
+function maSyncChips(){
+  document.querySelectorAll(".chip[data-maph]").forEach(c=>{
+    const p=+c.dataset.maph;
+    c.classList.toggle("on",p===maPhase);
+    c.classList.toggle("rec",p===phaseOf(getWeek()));
+  });
+  const w=getWeek();
+  $("#maRecHint").textContent=`当前第 ${w} 周 → 推荐阶段 ${phaseOf(w)}（加框为推荐）。阶段可手动切换。`;
+}
+function maGenerate(){
+  const idx=+$("#maTypeSel").value||0;
+  const fn=MA_TYPES[maPhase][idx].f;
+  const n=+$("#maCntSel").value;
+  const seen=new Set();let out=[];let guard=0;
+  while(out.length<n&&guard<3000){
+    guard++;const p=fn();
+    if(seen.has(p.q))continue;
+    seen.add(p.q);out.push(p);
+  }
+  while(out.length<n) out.push(fn());
+  out=wbInject("ma",out,maPhase);
+  maProblems=out;maShowAns=false;
+  maRender();
+  $("#maEmptyHint").style.display="none";
+  $("#maRes").innerHTML="";
+  maStartTimer();
+}
+function maRender(){
+  $("#maGrid").innerHTML=maProblems.map((p,i)=>
+    `<div class="pb"><span class="no">${i+1}.</span>`+
+    (p.wb?`<span class="wb-badge">📕</span>`:"")+
+    `<span class="pq">${p.q}</span>`+
+    `<input class="pa" type="number" inputmode="numeric" data-i="${i}"><span class="pm" data-m="${i}"></span>`+
+    wbBtnHtml("ma",p,i)+
+    (maShowAns?`<span class="ans">=${p.a}</span>`:"")+`</div>`
+  ).join("");
+  if(maShowAns) maProblems.forEach((p,i)=>{const el=$(`.pa[data-i="${i}"]`);if(el)el.value=p.a;});
+}
+function maStartTimer(){
+  maStopTimer();
+  if(!$("#maTimerOn").checked){$("#maTimer").textContent="";return;}
+  maLeft=300;
+  const tick=()=>{
+    const m=String(Math.floor(maLeft/60)).padStart(2,"0");
+    const s=String(maLeft%60).padStart(2,"0");
+    $("#maTimer").textContent=`⏱ ${m}:${s}`;
+    if(maLeft<=0){maStopTimer();$("#maTimer").textContent="⏱ 时间到";return;}
+    maLeft--;
+  };
+  tick();maTimerId=setInterval(tick,1000);
+}
+function maStopTimer(){if(maTimerId){clearInterval(maTimerId);maTimerId=null;}}
+function maCheck(){
+  if(!maProblems.length)return;
+  let ok=0,wbAdd=0,wbDel=0;
+  maProblems.forEach((p,i)=>{
+    const el=$(`.pa[data-i="${i}"]`);const mk=$(`.pm[data-m="${i}"]`);
+    el.classList.remove("right","wrong");mk.textContent="";mk.className="pm";
+    const v=el.value.trim();
+    if(v===""){return;}
+    const right=(Number(v)===p.a);
+    if(right){ok++;el.classList.add("right");mk.textContent="✓";mk.classList.add("y");}
+    else{el.classList.add("wrong");mk.textContent=`✗ ${p.a}`;mk.classList.add("n");}
+    p.ph=maPhase;
+    const r=wbHit("ma",p,right);
+    if(r==="added")wbAdd++; else if(r==="removed")wbDel++;
+  });
+  wbRender();
+  const done=maProblems.filter((p,i)=>$(`.pa[data-i="${i}"]`).value.trim()!=="").length;
+  $("#maRes").innerHTML=`<span class="big">${ok} / ${maProblems.length}</span>`+
+    `<span>已做 ${done} 题 · 正确率 ${done?Math.round(ok/done*100):0}%</span>`+
+    (ok===maProblems.length&&done===maProblems.length?`<span style="color:var(--good)">全对 🎉</span>`:"")+
+    `<span style="color:var(--muted);font-weight:600">📕 错题本 ${wbAdd?"+"+wbAdd+" ":""}${wbDel?"移出 "+wbDel+" ":""}${!wbAdd&&!wbDel?"无变化":""}</span>`;
+}
+
+/* ================= Tab / 绑定 ================= */
+document.querySelectorAll(".tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    const k=t.dataset.tab;
+    document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===t));
+    $("#panel-cn").classList.toggle("on",k==="cn");
+    $("#panel-ma").classList.toggle("on",k==="ma");
+    $("#panel-wb").classList.toggle("on",k==="wb");
+    cnStopTimer();maStopTimer();
+    $("#cnTimer").textContent="";$("#maTimer").textContent="";
+    if(k==="cn"&&!cnProblems.length) cnGenerate();
+    if(k==="ma"&&!maProblems.length) maGenerate();
+    if(k==="wb") wbRender();
+  });
+});
+document.querySelectorAll(".chip[data-cnph]").forEach(c=>{
+  c.addEventListener("click",()=>{cnPhase=+c.dataset.cnph;cnSyncChips();cnBuildTypes();cnGenerate();});
+});
+document.querySelectorAll(".chip[data-maph]").forEach(c=>{
+  c.addEventListener("click",()=>{maPhase=+c.dataset.maph;maSyncChips();maBuildTypes();maGenerate();});
+});
+$("#cnGenBtn").addEventListener("click",cnGenerate);
+$("#cnAgainBtn").addEventListener("click",cnGenerate);
+$("#cnCheckBtn").addEventListener("click",cnCheck);
+$("#cnAnsBtn").addEventListener("click",()=>{cnShowAns=true;cnRender();});
+$("#cnPrintBtn").addEventListener("click",()=>window.print());
+$("#cnCntSel").addEventListener("change",cnGenerate);
+$("#maGenBtn").addEventListener("click",maGenerate);
+$("#maAgainBtn").addEventListener("click",maGenerate);
+$("#maCheckBtn").addEventListener("click",maCheck);
+$("#maAnsBtn").addEventListener("click",()=>{maShowAns=true;maRender();});
+$("#maPrintBtn").addEventListener("click",()=>window.print());
+$("#maCntSel").addEventListener("change",maGenerate);
+
+/* 错题本交互 */
+$("#maGrid").addEventListener("click",e=>{
+  const wb=e.target.closest(".wb-add");
+  if(wb)wbToggle(wb);
+});
+$("#wbList").addEventListener("click",e=>{
+  const b=e.target.closest(".wb-del");
+  if(!b)return;
+  const k=b.dataset.k,i=+b.dataset.i;
+  if(WB[k]&&WB[k][i]){WB[k].splice(i,1);wbSave();wbRender();}
+});
+$("#wbClearCn").addEventListener("click",()=>{WB.cn=[];wbSave();wbRender();});
+$("#wbClearMa").addEventListener("click",()=>{WB.ma=[];wbSave();wbRender();});
+$("#wbPrintBtn").addEventListener("click",()=>window.print());
+$("#cnWbMix").addEventListener("change",cnGenerate);
+$("#maWbMix").addEventListener("change",maGenerate);
+
+wbLoad();wbRender();
+cnSyncChips();cnBuildTypes();cnGenerate();
+maSyncChips();maBuildTypes();
+</script>
+
+<script>
+/* ===== 页面互跳导航：资料库环境用 space 链接，自部署(同目录)用相对路径 ===== */
+(function(){
+  var SPACE={
+    plan:"https://www.workbuddy.cn/space/d/caxEmKJABbraYJf8XCU0LL",
+    drill:"https://www.workbuddy.cn/space/d/lvcPwY2W1LM0fUxuWP2IQs"
+  };
+  var inSpace=/workbuddy\.cn|codebuddy\.work/i.test(location.hostname||"");
+  var map={
+    navToDrill:["drill","语文数学练习生成器.html"],
+    navToPlan:["plan","学习周计划与每日打卡.html"]
+  };
+  Object.keys(map).forEach(function(id){
+    var el=document.getElementById(id); if(!el)return;
+    var k=map[id][0], f=map[id][1];
+    if(inSpace&&SPACE[k]){ el.href=SPACE[k]; el.target="_blank"; el.rel="noopener"; }
+    else{ el.href=f; }
+    /* 有些内嵌环境会拦截新窗口，拦截时在当前窗口打开，避免"点了没反应" */
+    el.addEventListener("click",function(ev){
+      if(el.target!=="_blank") return;
+      var w=null;
+      try{ w=window.open(el.href,"_blank"); }catch(err){}
+      if(!w){ ev.preventDefault(); try{ location.href=el.href; }catch(err){} }
+    });
+  });
+})();
+</script>
+</body>
+</html>
