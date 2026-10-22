@@ -375,6 +375,23 @@
     </div>
   </section>
 
+  <!-- 本周重点 -->
+  <section>
+    <div class="sec-title"><span class="dot"></span>本周重点（自动按日期算）</div>
+    <div class="card">
+      <div class="focus-grid">
+        <div class="cell"><p class="k">阶段 / 英语主题</p><p class="v" id="f-stage">—</p></div>
+        <div class="cell"><p class="k">语文（本周重点）</p><p class="v" id="f-cn">—</p></div>
+        <div class="cell"><p class="k">数学（本周重点）</p><p class="v" id="f-ma">—</p></div>
+        <div class="cell"><p class="k">绘本</p><p class="v" id="f-book">—</p></div>
+        <div class="cell" style="grid-column:1/-1"><p class="k">本周循环曲目（编号＝你 SSS 文件编号）</p>
+          <div id="f-songs"></div>
+          <p class="it-sub" id="f-note" style="margin-top:6px"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <section>
     <div class="sec-title"><span class="dot"></span>今日打卡</div>
     <div class="card">
@@ -395,23 +412,6 @@
       <div class="group">
         <h4>🌙 睡前（Switch + 阅读降温）</h4>
         <div id="g-life"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 本周重点 -->
-  <section>
-    <div class="sec-title"><span class="dot"></span>本周重点（自动按日期算）</div>
-    <div class="card">
-      <div class="focus-grid">
-        <div class="cell"><p class="k">阶段 / 英语主题</p><p class="v" id="f-stage">—</p></div>
-        <div class="cell"><p class="k">语文（本周重点）</p><p class="v" id="f-cn">—</p></div>
-        <div class="cell"><p class="k">数学（本周重点）</p><p class="v" id="f-ma">—</p></div>
-        <div class="cell"><p class="k">绘本</p><p class="v" id="f-book">—</p></div>
-        <div class="cell" style="grid-column:1/-1"><p class="k">本周循环曲目（编号＝你 SSS 文件编号）</p>
-          <div id="f-songs"></div>
-          <p class="it-sub" id="f-note" style="margin-top:6px"></p>
-        </div>
       </div>
     </div>
   </section>
@@ -440,7 +440,7 @@
     <div class="weeks" id="weeks"></div>
   </section>
 
-  <section id="prepSec" hidden>
+  <section hidden id="prepSec">
     <div class="card prep">
       <div class="prep-h">🌱 适应与调整期（<span id="prepRange"></span>）</div>
       <p class="prep-p">正式执行：<b id="prepStart"></b> 起第 1 周（<b id="prepDays"></b>）。这几天不追进度，只把节奏跑顺。</p>
